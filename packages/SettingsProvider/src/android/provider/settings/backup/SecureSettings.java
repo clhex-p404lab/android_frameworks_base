@@ -194,5 +194,6 @@ public class SecureSettings {
         Settings.Secure.LOCKSCREEN_USE_DOUBLE_LINE_CLOCK,
         Settings.Secure.SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS,
         Settings.Secure.SYSTEM_BLACK_THEME,
+        Settings.Secure.POWER_MENU_HIDE_ON_SECURE,
     };
 }
