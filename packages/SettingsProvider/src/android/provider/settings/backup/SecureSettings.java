@@ -219,6 +219,7 @@ public class SecureSettings {
         Settings.Secure.BLUETOOTH_LE_BROADCAST_PROGRAM_INFO,
         Settings.Secure.BLUETOOTH_LE_BROADCAST_CODE,
         Settings.Secure.BLUETOOTH_LE_BROADCAST_APP_SOURCE_NAME,
-        Settings.Secure.BERRY_BLACK_THEME
+        Settings.Secure.BERRY_BLACK_THEME,
+        Settings.Secure.POWER_MENU_HIDE_ON_SECURE,
     };
 }
