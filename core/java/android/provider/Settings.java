@@ -5371,6 +5371,12 @@ public final class Settings {
          */
         public static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
 
+	/**
+         * Whether to display 4G icon instead LTE
+         * @hide
+         */
+        public static final String SHOW_FOURG_ICON = "show_fourg_icon";
+
         /**
          * Whether to enable DOZE only when charging
          * @hide
