@@ -79,4 +79,7 @@
         <item>com.android.launcher3</item>
         <item>com.google.android.apps.nexuslauncher</item>
     </string-array>
+
+     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">false</bool>
 </resources>

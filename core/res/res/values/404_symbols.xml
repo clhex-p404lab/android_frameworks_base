@@ -79,4 +79,6 @@
     <java-symbol type="array" name="config_parallelSpaceWhitelist" />
     <java-symbol type="array" name="config_parallelSpaceBlocklist" />
 
+    <!-- Battery Leds -->
+    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
 </resources>
