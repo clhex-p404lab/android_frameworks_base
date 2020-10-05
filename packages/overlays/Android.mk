@@ -76,6 +76,7 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackXperiaSettingsOverlay \
 	IconPackXperiaSystemUIOverlay \
 	NavigationBarMode3ButtonOverlay \
+	NavigationBarMode2ButtonOverlay \
 	NavigationBarModeGesturalOverlay \
 	NavigationBarModeGesturalOverlayNarrowBack \
 	NavigationBarModeGesturalOverlayWideBack \
