@@ -5584,6 +5584,18 @@ public final class Settings {
          */
         public static final String SHOW_LOCKSCREEN_MEDIA_ART = "show_lockscreen_media_art";
 
+	/**
+         * reTicker Status
+         * @hide
+         */
+        public static final String RETICKER_STATUS = "reticker_status";
+
+        /**
+         * reTicker Colored
+         * @hide
+         */
+        public static final String RETICKER_COLORED = "reticker_colored";
+
         /**
          * Whether the torch launch gesture to double tap or long press the power button when the
          * screen is off should be enabled. *
