@@ -93,5 +93,6 @@ public class SystemSettings {
         Settings.System.SHOW_FOURG_ICON,
         Settings.System.QS_FOOTER_DATA_USAGE,
         Settings.System.ENABLE_RIPPLE_EFFECT,
+        Settings.System.FULLSCREEN_GESTURES,
     };
 }
