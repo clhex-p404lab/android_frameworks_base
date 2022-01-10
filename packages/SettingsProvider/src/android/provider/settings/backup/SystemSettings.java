@@ -92,5 +92,6 @@ public class SystemSettings {
         Settings.System.DOZE_ON_CHARGE,
         Settings.System.SHOW_FOURG_ICON,
         Settings.System.QS_FOOTER_DATA_USAGE,
+        Settings.System.ENABLE_RIPPLE_EFFECT,
     };
 }

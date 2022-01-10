@@ -5465,6 +5465,12 @@ public final class Settings {
          */
         public static final String QS_FOOTER_DATA_USAGE = "qs_footer_data_usage";
 
+        /**
+         * Whether to enable the ripple animation on fingerprint unlock
+         * @hide
+         */
+        public static final String ENABLE_RIPPLE_EFFECT = "enable_ripple_effect";
+
        /**
          * These are all public system settings
          *
