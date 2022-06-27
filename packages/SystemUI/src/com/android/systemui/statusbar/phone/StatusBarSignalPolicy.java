@@ -31,7 +31,6 @@ import com.android.systemui.statusbar.connectivity.MobileDataIndicators;
 import com.android.systemui.statusbar.connectivity.NetworkController;
 import com.android.systemui.statusbar.connectivity.SignalCallback;
 import com.android.systemui.statusbar.connectivity.WifiIndicators;
-import com.android.systemui.statusbar.policy.NetworkTraffic;
 import com.android.systemui.statusbar.policy.SecurityController;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
@@ -162,19 +161,16 @@ public class StatusBarSignalPolicy implements SignalCallback,
         boolean hideEthernet = hideList.contains(mSlotEthernet);
         boolean hideVpn = hideList.contains(mSlotVpn);
         boolean hideRoaming = hideList.contains(mSlotRoaming);
-        boolean activityEnabled = !hideList.contains(NetworkTraffic.SLOT);
 
         if (hideAirplane != mHideAirplane || hideMobile != mHideMobile
                 || hideEthernet != mHideEthernet || hideWifi != mHideWifi
-                || hideVpn != mHideVpn || hideRoaming != mHideRoaming
-                || activityEnabled != mActivityEnabled) {
+                || hideVpn != mHideVpn || hideRoaming != mHideRoaming) {
             mHideAirplane = hideAirplane;
             mHideMobile = hideMobile;
             mHideEthernet = hideEthernet;
             mHideWifi = hideWifi;
             mHideVpn = hideVpn;
             mHideRoaming = hideRoaming;
-            mActivityEnabled = activityEnabled;
             // Re-register to get new callbacks.
             mNetworkController.removeCallback(this);
             mNetworkController.addCallback(this);
