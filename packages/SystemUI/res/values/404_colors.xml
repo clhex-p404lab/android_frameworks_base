@@ -23,4 +23,6 @@
     <!-- OnTheSpot: OTS snackbar action denial button text color. -->
     <color name="on_the_spot_deny_text">#FF9B9B9B</color>
 
+    <!-- reticker -->
+    <color name="reticker_background_color">@android:color/system_neutral1_50</color>
 </resources>
