@@ -5644,6 +5644,12 @@ public final class Settings {
         public static final String NETWORK_TRAFFIC_REFRESH_INTERVAL = "network_traffic_refresh_interval";
 
         /**
+         * Restyled reTicker
+         * @hide
+         */
+        public static final String NEW_RETICKER = "new_reticker";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
