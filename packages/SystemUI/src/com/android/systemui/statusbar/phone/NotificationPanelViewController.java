@@ -1058,18 +1058,9 @@ public class NotificationPanelViewController extends PanelViewController {
         mKeyguardBottomArea.setPreviewContainer(mPreviewContainer);
         mPulseLightsView = (NotificationLightsView) mView.findViewById(R.id.lights_container);
 
-        boolean newRetickerStyle = Settings.System.getInt(mView.getContext().getContentResolver(),
-                        Settings.System.NEW_RETICKER, 0) == 1;
-
-        if(newRetickerStyle) {
-            mReTickerComeback = mView.findViewById(R.id.ticker_comeback_new);
-            mReTickerComebackIcon = mView.findViewById(R.id.ticker_comeback_icon_new);
-            mReTickerContentTV = mView.findViewById(R.id.ticker_content_new);
-        } else {
-            mReTickerComeback = mView.findViewById(R.id.ticker_comeback);
-            mReTickerComebackIcon = mView.findViewById(R.id.ticker_comeback_icon);
-            mReTickerContentTV = mView.findViewById(R.id.ticker_content);
-        }
+        mReTickerComeback = mView.findViewById(R.id.ticker_comeback);
+        mReTickerComebackIcon = mView.findViewById(R.id.ticker_comeback_icon);
+        mReTickerContentTV = mView.findViewById(R.id.ticker_content);
         mNotificationStackScroller = mView.findViewById(R.id.notification_stack_scroller);
 
         initBottomArea();
@@ -5386,10 +5377,6 @@ public class NotificationPanelViewController extends PanelViewController {
     public void reTickerView(boolean visibility) {
         boolean reTickerStatus = Settings.System.getIntForUser(mView.getContext().getContentResolver(),
                 Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT) != 0;
-        boolean newRetickerStyle = Settings.System.getInt(mView.getContext().getContentResolver(),
-                Settings.System.NEW_RETICKER, 0) == 1;
-        boolean newRetickerAnimation = Settings.System.getInt(mView.getContext().getContentResolver(),
-                Settings.System.NEW_RETICKER_ANIMATION, 0) == 1;
         if (!reTickerStatus) return;
         if (visibility && mReTickerComeback.getVisibility() == View.VISIBLE) {
             reTickerDismissal();
@@ -5441,11 +5428,7 @@ public class NotificationPanelViewController extends PanelViewController {
             mReTickerContentTV.setText(mergedContentText);
             mReTickerContentTV.setTextAppearance(mView.getContext(), R.style.TextAppearance_Notifications_reTicker);
             mReTickerContentTV.setSelected(true);
-            if(newRetickerStyle || newRetickerAnimation) {
-                RetickerAnimations.revealAnimation(mReTickerComeback);
-            } else {
-                RetickerAnimations.doBounceAnimationIn(mReTickerComeback);
-            }
+            RetickerAnimations.doBounceAnimationIn(mReTickerComeback);
             mReTickerComeback.setOnClickListener(v -> {
                 try {
                     if (reTickerIntent != null)
@@ -5453,13 +5436,8 @@ public class NotificationPanelViewController extends PanelViewController {
                 } catch (PendingIntent.CanceledException e) {
                 }
                 if (reTickerIntent != null) {
-                    if(newRetickerStyle || newRetickerAnimation) {
-                        RetickerAnimations.revealAnimationHide(mReTickerComeback, mNotificationStackScroller);
-                        reTickerViewVisibility();
-                    } else {
-                        RetickerAnimations.doBounceAnimationOut(mReTickerComeback, mNotificationStackScroller);
-                        reTickerViewVisibility();
-                    }
+                    RetickerAnimations.doBounceAnimationOut(mReTickerComeback, mNotificationStackScroller);
+                    reTickerViewVisibility();
                 }
             });
         } else {
@@ -5484,15 +5462,7 @@ public class NotificationPanelViewController extends PanelViewController {
     }
 
     public void reTickerDismissal() {
-        boolean newRetickerStyle = Settings.System.getInt(mView.getContext().getContentResolver(),
-                Settings.System.NEW_RETICKER, 0) == 1;
-        boolean newRetickerAnimation = Settings.System.getInt(mView.getContext().getContentResolver(),
-                Settings.System.NEW_RETICKER_ANIMATION, 0) == 1;
-        if(newRetickerStyle || newRetickerAnimation) {
-            RetickerAnimations.revealAnimationHide(mReTickerComeback, mNotificationStackScroller);
-        } else {
-            RetickerAnimations.doBounceAnimationOut(mReTickerComeback, mNotificationStackScroller);
-        }
+        RetickerAnimations.doBounceAnimationOut(mReTickerComeback, mNotificationStackScroller);
         mReTickerComeback.getViewTreeObserver().removeOnComputeInternalInsetsListener(mInsetsListener);
     }
 
