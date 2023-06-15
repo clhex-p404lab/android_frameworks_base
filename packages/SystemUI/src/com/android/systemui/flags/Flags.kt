@@ -165,7 +165,7 @@ object Flags {
     // TODO(b/255618149): Tracking Bug
     @JvmField
     val CUSTOMIZABLE_LOCK_SCREEN_QUICK_AFFORDANCES =
-        unreleasedFlag(216, "customizable_lock_screen_quick_affordances", teamfood = false)
+        releasedFlag(216, "customizable_lock_screen_quick_affordances")
 
     /** Shows chipbar UI whenever the device is unlocked by ActiveUnlock (watch). */
     // TODO(b/256513609): Tracking Bug
@@ -300,7 +300,7 @@ object Flags {
     val MEDIA_TAP_TO_TRANSFER = unreleasedFlag(900, "media_tap_to_transfer", teamfood = true)
 
     // TODO(b/254512502): Tracking Bug
-    val MEDIA_SESSION_ACTIONS = unreleasedFlag(901, "media_session_actions")
+    val MEDIA_SESSION_ACTIONS = releasedFlag(901, "media_session_actions")
 
     // TODO(b/254512726): Tracking Bug
     val MEDIA_NEARBY_DEVICES = releasedFlag(903, "media_nearby_devices")
@@ -315,13 +315,13 @@ object Flags {
     @JvmField val DREAM_MEDIA_TAP_TO_OPEN = unreleasedFlag(906, "dream_media_tap_to_open")
 
     // TODO(b/254513168): Tracking Bug
-    @JvmField val UMO_SURFACE_RIPPLE = unreleasedFlag(907, "umo_surface_ripple")
+    @JvmField val UMO_SURFACE_RIPPLE = releasedFlag(907, "umo_surface_ripple")
 
     @JvmField
     val MEDIA_FALSING_PENALTY = unreleasedFlag(908, "media_falsing_media", teamfood = true)
 
     // TODO(b/261734857): Tracking Bug
-    @JvmField val UMO_TURBULENCE_NOISE = unreleasedFlag(909, "umo_turbulence_noise")
+    @JvmField val UMO_TURBULENCE_NOISE = releasedFlag(909, "umo_turbulence_noise")
 
     // TODO(b/263272731): Tracking Bug
     val MEDIA_TTT_RECEIVER_SUCCESS_RIPPLE =
